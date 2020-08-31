@@ -1,11 +1,12 @@
 import React from 'react';
 import { useSelector } from "react-redux";
 
-const Counter = ({ increase, decrease }) => {
+const CounterSagaVer = ({ increase, decrease }) => {
     const { number } = useSelector(state => state.counter);
 
     return (
         <div>
+            <strong>Saga Ver</strong>
             {number} <br />
 
             <button onClick={increase}>+</button>
@@ -14,4 +15,4 @@ const Counter = ({ increase, decrease }) => {
     );
 };
 
-export default Counter;
+export default CounterSagaVer;
