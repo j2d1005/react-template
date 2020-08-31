@@ -5,6 +5,7 @@ import { Provider } from 'react-redux';
 import createSagaMiddleware from 'redux-saga';
 
 import { composeWithDevTools } from 'redux-devtools-extension';
+import logger from 'redux-logger';
 
 import App from './App';
 import rootReducer from "./reducers";
@@ -20,7 +21,8 @@ const store = createStore(
     rootReducer,
     composeWithDevTools(
         applyMiddleware(
-            sagaMiddleware  // 사가 미들웨어 적용
+            sagaMiddleware,  // 사가 미들웨어 적용
+            logger
         )
     )
 );
